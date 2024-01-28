@@ -1,16 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import Menu from "./Menu/Menu"
+/** @format */
+
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import Menu from './Menu/Menu'
+import MenuButton from './Menu/MenuButton'
+import MenuDropdown from './Menu/MenuDropdown'
+import MenuItem from './Menu/MenuItem'
 
 function App() {
-  return (
-    <>
-      <Menu
-        buttonText="Sports"
-        items={["Tennis", "Racquetball", "Pickleball", "Squash"]}
-      />
-    </>
-  )
+    const sports = ['Tennis', 'Racquetball', 'Pickleball', 'Squash']
+    return (
+        <Menu>
+            <MenuButton>Sports</MenuButton>
+            <MenuDropdown>
+                {sports.map(sport => (
+                    <MenuItem key={sport}>{sport}</MenuItem>
+                ))}
+            </MenuDropdown>
+        </Menu>
+    )
 }
 
-ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+ReactDOM.createRoot(document.getElementById('root')).render(<App />)
