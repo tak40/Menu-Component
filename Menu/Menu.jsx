@@ -1,8 +1,6 @@
 /** @format */
 
 import React, { useState, createContext } from 'react'
-import MenuButton from './MenuButton'
-import MenuDropdown from './MenuDropdown'
 
 const MenuContext = createContext()
 
