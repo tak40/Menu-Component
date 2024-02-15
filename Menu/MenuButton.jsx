@@ -1,19 +1,14 @@
 /** @format */
 
-import React, { useContext } from 'react'
+import React from 'react'
 import Button from '../Button/Button'
-import { MenuContext } from './Menu'
 
-export default function MenuButton({ children }) {
-    const { toggle, open, menuId } = useContext(MenuContext)
+function MenuButton({ children }) {
     return (
-        <Button
-            onClick={toggle}
-            aria-expanded={open}
-            aria-haspopup="true"
-            aria-controls={menuId}
-        >
+        <Button aria-expanded={open} aria-haspopup="true">
             {children}
         </Button>
     )
 }
+
+export default MenuButton
