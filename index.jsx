@@ -2,39 +2,25 @@
 
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import Menu from './Menu/index'
-import Toggle from './Toggle/index'
-import { BsStar, BsStarFill } from 'react-icons/bs'
+import Menu from './components/Menu/index'
+import Star from './components/Star'
 
 function App() {
     return (
         <main>
-            <Toggle>
-                <Toggle.Button>
-                    <Toggle.On>
-                        <BsStarFill className="star filled" />
-                    </Toggle.On>
-                    <Toggle.Off>
-                        <BsStar className="star" />
-                    </Toggle.Off>
-                </Toggle.Button>
-            </Toggle>
+            <Star onChange={() => {}} />
 
-            <Toggle>
-                <Menu>
-                    <Toggle.Button>
-                        <Menu.Button>Menu</Menu.Button>
-                    </Toggle.Button>
-                    <Toggle.On>
-                        <Menu.Dropdown>
-                            <Menu.Item>Home</Menu.Item>
-                            <Menu.Item>About</Menu.Item>
-                            <Menu.Item>Contact</Menu.Item>
-                            <Menu.Item>Blog</Menu.Item>
-                        </Menu.Dropdown>
-                    </Toggle.On>
-                </Menu>
-            </Toggle>
+            <br />
+
+            <Menu onOpen={() => console.log('Menu toggled')}>
+                <Menu.Button>Menu</Menu.Button>
+                <Menu.Dropdown>
+                    <Menu.Item>Home</Menu.Item>
+                    <Menu.Item>About</Menu.Item>
+                    <Menu.Item>Contact</Menu.Item>
+                    <Menu.Item>Blog</Menu.Item>
+                </Menu.Dropdown>
+            </Menu>
         </main>
     )
 }
